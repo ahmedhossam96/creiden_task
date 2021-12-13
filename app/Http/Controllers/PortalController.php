@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+
 use Illuminate\Http\Request;
 
 class PortalController extends Controller
@@ -13,7 +15,7 @@ class PortalController extends Controller
 
   return $items;
  
-  return view('portal', compact(['items']));
+  //return view('portal', compact(['items']));
   
     }
 
@@ -34,7 +36,7 @@ class PortalController extends Controller
 
     
  
-       return view('portal');
+      // return view('portal');
 
     }
 
@@ -45,7 +47,9 @@ class PortalController extends Controller
         $item = Item::findOrFail($id);
         $item->update($request->all());
 
-        return view('portal', compact(['item']));
+        return $item;
+
+       // return view('portal', compact(['item']));
 
        
     }
@@ -60,7 +64,10 @@ class PortalController extends Controller
 
         $item =  Item::all();
 
-        return view('portal', compact(['item']));
+        return $item;
+
+
+      //  return view('portal', compact(['item']));
 
 
     }

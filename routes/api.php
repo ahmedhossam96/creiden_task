@@ -1,7 +1,10 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\PortalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/', [PortalController::class, 'index']);
+Route::get('portal', [PortalController::class, 'index']);
 
 
 
 
 
-Route::post('portal', [portalController::class, 'store']);
+Route::post('portall', [portalController::class, 'store']);
 
-Route::get('portal/{id}', [IssueController::class, 'update']);
+Route::get('portalll/{id}', [IssueController::class, 'update']);
 
+Route::get('portallll/{id}', [IssueController::class, 'delete']);
 
-
-Route::get('portal/{id}', [IssueController::class, 'delete']);
